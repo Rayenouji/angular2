@@ -1,0 +1,34 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Film :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-4 col-md-2 col-lg-2">
+            <label>ID Film</label>
+            <input readonly type="text" [(ngModel)]="currentFilm.idFilm" name="idProduit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Film</label>
+            <input type="text" [(ngModel)]="currentFilm.nomFilm" name="nomFilm" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-2">
+            <label>genre</label>
+            <input type="text" [(ngModel)]="currentFilm.genre" name="genre" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [(ngModel)]="currentFilm.dateCreation" name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4"> <label>Director</label>
+             <select class="form-control form-control-lg"id="idCat" name="idCat" [(ngModel)]="updatedDirId">
+                <option *ngFor="let cat of director" [value]="cat.idDir">
+                    {{cat.nomDir}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="updateFilm()" class="btn btn-success">Modifer</button>
+        </div>
+
+    </form>
+</div>
